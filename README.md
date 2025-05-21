@@ -1,4 +1,4 @@
-# eDreams Flight Booking Concurrency Training
+# Flight Booking Concurrency Training
 
 This project is a senior-level concurrency training exercise inspired by flight booking systems 
 of digital airline companies. 
