@@ -41,68 +41,33 @@ public class Flight {
         return capacity;
     }
 
+    // TODO 0: Implement a method to check if there are available seats
     public boolean hasAvailableSeats() {
-        return bookedSeats.size() < capacity;
+        return false;
     }
 
     // TODO 1: Implement a method to get the number of available seats
     public List<SeatNumber> getAvailableSeats() {
-        lock.lock();
-        try {
-            return allSeats.stream()
-                    .filter(seat -> !bookedSeats.containsKey(seat))
-                    .collect(Collectors.toList());
-        } finally {
-            lock.unlock();
-        }
+        return null;
     }
 
+    // TODO 2: Implement a method to get the booked seats
     public Booking bookSeat(Passenger passenger) {
-        lock.lock();
-        try {
-            if (!hasAvailableSeats()) {
-                throw new IllegalStateException("No available seats on flight " + flightId);
-            }
-
-            Optional<SeatNumber> availableSeat = getAvailableSeats().stream().findFirst();
-            
-            if (availableSeat.isEmpty()) {
-                throw new IllegalStateException("Failed to find an available seat");
-            }
-            
-            SeatNumber seatNumber = availableSeat.get();
-            return bookSpecificSeat(passenger, seatNumber);
-        } finally {
-            lock.unlock();
-        }
+       return null;
     }
 
+    // TODO 3: Implement a method to book a specific seat
     public Booking bookSpecificSeat(Passenger passenger, SeatNumber seatNumber) {
-        lock.lock();
-        try {
-            if (bookedSeats.containsKey(seatNumber)) {
-                throw new IllegalStateException("Seat " + seatNumber + " is already booked on flight " + flightId);
-            }
-
-            Booking booking = new Booking(passenger, this, seatNumber);
-            bookedSeats.put(seatNumber, booking);
-            return booking;
-        } finally {
-            lock.unlock();
-        }
+        return null;
     }
 
     public int getBookedSeatsCount() {
         return bookedSeats.size();
     }
-    
+
+    // TODO 4: Implement a method to get all bookings
     public Set<Booking> getAllBookings() {
-        lock.lock();
-        try {
-            return new HashSet<>(bookedSeats.values());
-        } finally {
-            lock.unlock();
-        }
+        return null;
     }
 
     @Override
