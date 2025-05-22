@@ -51,7 +51,7 @@ public class Flight {
         return null;
     }
 
-    // TODO 2: Implement a method to get the booked seats
+    // TODO 2: Implement a method to book a seat for a passenger
     public Booking bookSeat(Passenger passenger) {
        return null;
     }
