@@ -1,6 +1,6 @@
 # Flight Booking Concurrency Training
 
-This project is a senior-level concurrency training exercise inspired by flight booking systems 
+This project is concurrency exercise inspired by flight booking systems 
 of digital airline companies. 
 It demonstrates domain-driven design principles and concurrency control in a rich domain model.
 
